@@ -205,6 +205,7 @@ d3.behavior.zoom = function() {
     }
 
     function ended() {
+      translateTo(d3.mouse(that), location0);
       subject.on(mousemove, null).on(mouseup, null);
       dragRestore(dragged && d3.event.target === target);
       zoomended(dispatch);
